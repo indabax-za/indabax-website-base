@@ -4,10 +4,12 @@
 
 
 {{ if (gt (len (where .Pages "Type" "!=" "hidden") ) 0) }}
+{{/*  Get pages sorted by menu.main weight  */}}
+{{ $pages := sort .Pages "Weight" "asc" }}
 <section class="section bg-secondary">
   <div class="container-fluid">
-    <div class="row align-items-stretch">
-      {{ range .Pages}}
+    <div class="row align-items-baseline">
+      {{ range $pages }}
         {{if not (eq .Type "hidden")}}
           {{ .Render "post" }}
         {{ end }}

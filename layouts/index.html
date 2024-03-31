@@ -154,7 +154,7 @@
 
 <!-- the school -->
 {{ with site.Data.homepage.school }}
-<hr class="mb-0" />
+<hr class="m-0" />
 
 <section class="section bg-light">
   <div class="container">
@@ -225,7 +225,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center mb-5">
-        <h2 class="section-title text-white mb-0">{{ site.Data.sponsors.title | markdownify }}</h2>
+        <h2 class="section-title text-white m-0">{{ site.Data.sponsors.title | markdownify }}</h2>
         {{ if site.Data.homepage.sponsors.link }}
         <a href="{{site.Data.homepage.sponsors.link | absURL}}" class="text-white">view all<i class="ti-arrow-top-right"></i></a>
         {{ end }}
@@ -263,7 +263,7 @@
     <div class="container">
       <div class="row mb-2">
         <div class="col-12 text-center mb-5">
-          <h2 class="section-title mb-0">{{site.Data.schedule.title}}</h2>
+          <h2 class="section-title m-0">{{site.Data.schedule.title}}</h2>
           {{if site.Data.homepage.schedule.link}}
             <a href="{{site.Data.homepage.schedule.link}}">{{site.Data.homepage.schedule.link_text}}
               {{$link_icon := default "ti-arrow-top-right" site.Data.homepage.schedule.link_icon}}
@@ -287,7 +287,7 @@
   <div class="container" id="faculty">
     <div class="row mb-2">
       <div class="col-12 text-center mb-5">
-        <h2 class="section-title mb-0">{{site.Data.homepage.faculty.title}}</h2>
+        <h2 class="section-title m-0">{{site.Data.homepage.faculty.title}}</h2>
         {{/*  assign site.Data.homepage.faculty.link to $faculty_link with default value of /people#faculty  */}}
         {{ $faculty_link := default "/people/#faculty" site.Data.homepage.faculty.link }}
         <a href="{{$faculty_link}}">{{site.Data.homepage.faculty.link_text}}<i class="ti-arrow-top-right"></i></a>
@@ -303,7 +303,7 @@
   <div class="container text-center" id="teaching-assistants">
     <div class="row mb-2">
       <div class="col-12 text-center mb-5">
-        <h2 class="section-title mb-0">{{site.Data.tutors.title}}</h2>
+        <h2 class="section-title m-0">{{site.Data.tutors.title}}</h2>
         {{ $ta_link := default "/people/#teaching-assistants" site.Data.homepage.faculty.link}}
         <a href="{{$ta_link}}">{{site.Data.homepage.faculty.link_text}}<i class="ti-arrow-top-right"></i></a>
       </div>
@@ -320,12 +320,12 @@
 <!-- blog -->
 {{ if site.Data.homepage.news.enable }}
 {{ with .Site.GetPage "/news" }}
-<hr class="mb-0" />
+{{/*  <hr class="m-0" />  */}}
 <section class="section bg-dark">
   <div class="container">
     <div class="row justify-content-center align-items-start">
       <div class="col-12 text-center mb-5">
-        <h2 class="section-title mb-0 text-white">
+        <h2 class="section-title m-0 text-white">
           {{.Title | markdownify }}
         </h2>
         <a href="news">read more<i class="ti-arrow-top-right"></i></a>
@@ -358,7 +358,7 @@
         <a href="{{.link}}" target="_blank">
           <img class="img-fluid d-inline-block rounded" src="{{.image | relURL }}" title="{{.name | markdownify}}" alt="photo of {{.name | markdownify}}"/>
         </a>
-          <p class="mb-0">{{.position | markdownify}}</p>
+          <p class="m-0">{{.position | markdownify}}</p>
           <h4>
           {{if .link}}<a href="{{.link}}" target="_blank">{{end}}
           {{.name | markdownify}}
@@ -409,7 +409,7 @@
           <div class="card-body">
             <div class="info row">
             <h4 class="col-8 mb-1">{{.name | markdownify}}</h4>
-            <p class="col-4 mb-0 font-secondary text-light right text-right">{{.relation | markdownify}}</p>
+            <p class="col-4 m-0 font-secondary text-light right text-right">{{.relation | markdownify}}</p>
             </div>
             <div class="card-text text-light font-smaller small"><i class="text-primary ti-quote-left"></i>
               <small>{{.content | markdownify}}</small> 
