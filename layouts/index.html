@@ -343,53 +343,11 @@
 {{ end }}
 {{ end }}
 
-{{ if site.Data.homepage.experience.enable }}
-{{ with site.Data.experience }}
-<!-- experience -->
-<hr class="my-0" />
-<section class="section bg-light position-relative slideshow-bg-shapes">
-  <div class="container">
-    <div class="row justify-content-around">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-title font-secondary" id="experience">{{ .title | markdownify }}</h2>
-      </div>
-      {{ range .item }}
-      <div class="col-lg-2 col-md-4 col-6 text-center mb-4">
-        <a href="{{.link}}" target="_blank">
-          <img class="img-fluid d-inline-block rounded" src="{{.image | relURL }}" title="{{.name | markdownify}}" alt="photo of {{.name | markdownify}}"/>
-        </a>
-          <p class="m-0">{{.position | markdownify}}</p>
-          <h4>
-          {{if .link}}<a href="{{.link}}" target="_blank">{{end}}
-          {{.name | markdownify}}
-          {{if .link}}</a>{{end}}
-          </h4>
-          <h6 class="text-light">{{.affiliation | markdownify}}</h6>
-        </a>
-      </div>
-      {{ end }}
-    </div>
-  </div>
-  {{ if site.Params.decor }}
-  <!-- bg shapes -->
-  <img src="{{`images/backgrounds/map.png` | relURL }}" alt="map" class="img-fluid bg-map" />
-  <img src="{{`images/illustrations/dots-group-v.svg` | relURL }}" alt="bg-shape" class="img-fluid bg-shape-5" />
-  <img src="{{`images/illustrations/leaf-orange.svg` | relURL }}" alt="bg-shape" class="img-fluid bg-shape-4" />
-  <img src="{{`images/illustrations/dots-group-sm.svg` | relURL }}" alt="bg-shape" class="img-fluid bg-shape-3" />
-  <img src="{{`images/illustrations/leaf-pink-round.svg` | relURL }}" alt="bg-shape" class="img-fluid bg-shape-2" />
-  <img src="{{`images/illustrations/leaf-cyan.svg` | relURL }}" alt="bg-shape" class="img-fluid bg-shape-1" />
-  {{ end }}
-</section>
-
-{{ end }}
-{{ end }}
-<!-- /experience -->
-
 <!-- testimonials -->
 {{ if site.Data.homepage.testimonials.enable }}
 {{ with site.Data.testimonials }}
 <hr class="my-0" />
-<section class="section bg-light testimonials">
+<section id="testimonials" class="section bg-light testimonials position-relative slideshow-bg-shapes">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -421,10 +379,57 @@
       </div>
     </div>
   </div>
+  {{ if site.Params.decor }}
+  <!-- bg shapes -->
+  <img src="{{`images/backgrounds/map.png` | relURL }}" alt="map" class="img-fluid bg-map" />
+  <img src="{{`images/illustrations/dots-group-v.svg` | relURL }}" alt="bg-shape" class="img-fluid bg-shape-5" />
+  <img src="{{`images/illustrations/leaf-orange.svg` | relURL }}" alt="bg-shape" class="img-fluid bg-shape-4" />
+  <img src="{{`images/illustrations/dots-group-sm.svg` | relURL }}" alt="bg-shape" class="img-fluid bg-shape-3" />
+  <img src="{{`images/illustrations/leaf-pink-round.svg` | relURL }}" alt="bg-shape" class="img-fluid bg-shape-2" />
+  <img src="{{`images/illustrations/leaf-cyan.svg` | relURL }}" alt="bg-shape" class="img-fluid bg-shape-1" />
+  {{ end }}
 </section>
 {{ end }}
 {{ end }}
 <!-- /testimonials -->
+
+{{ if site.Data.homepage.experience.enable }}
+{{ with site.Data.experience }}
+<!-- experience -->
+<hr class="my-0" />
+<section class="section position-relative slideshow-bg-shapes">
+  <div class="container">
+    <div class="row justify-content-around">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-title font-secondary" id="experience">{{ .title | markdownify }}</h2>
+      </div>
+      {{ range .item }}
+      <div class="col-lg-2 col-md-4 col-6 text-center mb-4">
+        <a href="{{.link}}" target="_blank">
+          <img class="img-fluid d-inline-block rounded" src="{{.image | relURL }}" title="{{.name | markdownify}}" alt="photo of {{.name | markdownify}}"/>
+        </a>
+          <p class="m-0">{{.position | markdownify}}</p>
+          <h4>
+          {{if .link}}<a href="{{.link}}" target="_blank">{{end}}
+          {{.name | markdownify}}
+          {{if .link}}</a>{{end}}
+          </h4>
+          <h6 class="text-light">{{.affiliation | markdownify}}</h6>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ if site.Params.decor }}
+  <!-- bg shapes -->
+  <img src="{{`images/backgrounds/map.png` | relURL }}" alt="map" class="img-fluid bg-map" />
+  <img src="{{`images/illustrations/leaf-cyan-lg.svg` | relURL }}" alt="bg-shape" class="img-fluid bg-shape-1" />
+  {{ end }}
+</section>
+
+{{ end }}
+{{ end }}
+<!-- /experience -->
 
 
 {{ if site.Params.contact.homepage }} {{ partial "contact.html" . }} {{ end }}
