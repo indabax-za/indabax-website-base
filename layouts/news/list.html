@@ -14,7 +14,7 @@
           </div>
         </div>
         {{ range site.Params.social }}
-        {{ if in .URL "twitter" }}
+        {{ if or (in .URL "twitter") (in .URL "x.com") }}
         <div class="col-sm-12 col-md-4">
           <a class="twitter-timeline" href="{{.embed_url}}">Tweets</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
