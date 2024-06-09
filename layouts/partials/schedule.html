@@ -180,6 +180,12 @@
                   {{partial "people-person" (dict "context" $context "show_extra" false 
                                             "show_track" false "col" "override" 
                                             "width" "w-8" ) }}
+                                            {{/* Display affiliation if it exists */}}
+                    {{ if $context.affiliation }}
+                    <div class="affiliation-info">
+                      <small class="my-0 p-0 text-light text-compressed">{{ $context.affiliation }}</small>
+                    </div>
+                  {{ end }}
                     {{ if .time}}
                       <span
                         class="font-primary badge bg-light text-dark  border border-light rounded-pill 
